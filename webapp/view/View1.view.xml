@@ -52,25 +52,22 @@
 		</detailPages>
 		<masterPages>
 			<Page
-				id="master"
-				title="Master 1"
-				backgroundDesign= "List">
-				<List>
-					<StandardListItem title="To Master2" type="Navigation" press=".onPressGoToMaster" />
-				</List>
-			</Page>
-			<Page
 				id="master2"
 				title="Master 2"
 				backgroundDesign="List"
 				showNavButton="true"
 				navButtonPress=".onPressMasterBack">
-				<List itemPress=".onListItemPress">
+				<List itemPress=".onListItemPress" items="{/employeemaster}">
 					<items>
-						<StandardListItem title="To Detail 1" type="Active" custom:to="detail" />
-						<StandardListItem title="To Detail 2" type="Active" custom:to="detailDetail" />
-						<StandardListItem title="To Detail 3" type="Active" custom:to="detail2" />
+						<StandardListItem icon="sap-icon://customer" title="{EmpName}" info="{EmpEmail}"></StandardListItem>
 					</items>
+				</List>
+				
+				<List >
+					<StandardListItem title="Details" type="Active" custom:to="detail" />
+						<StandardListItem title="Expenditures Prediction" type="Active" custom:to="detailDetail" />
+						<StandardListItem title="Loans" type="Active" custom:to="detail2" />
+						<StandardListItem title="Wallet History" type="Active" custom:to="detail2" />
 				</List>
 			</Page>
 		</masterPages>
