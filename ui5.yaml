@@ -1,0 +1,33 @@
+specVersion: "3.1"
+metadata:
+  name: financeoptimizer
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+          - path: /sap
+            url: https://5f61e87atrial-dev-financialhub-srv.cfapps.us10-001.hana.ondemand.com
+            destination: FinancialHub
+          - path: /v2/catalog/
+            url: https://5f61e87atrial-dev-financialhub-srv.cfapps.us10-001.hana.ondemand.com
+            destination: FinancialHub
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: financeoptimizer
+        ui5Theme: sap_fiori_3
