@@ -1,8 +1,15 @@
 <mvc:View controllerName="financeoptimizer.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    >
+    xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        	<Button text="Welcome" press="onWelcome"></Button>
+      <List itemPress=".onpress">
+          <items>
+						<StandardListItem title="Details" type="Active" press="onWelcome"/>
+						<StandardListItem title="Expendicture Prediction" type="Active" press="onEP"/>
+						<StandardListItem title="Loans" type="Active" press="onLoans"/>
+            <StandardListItem title="Wallet History" type="Active" press="onWH"/>
+            <StandardListItem title="Feedback" type="Active" press="onFed"/>
+					</items>
+      </List>
     </Page>
 </mvc:View>
