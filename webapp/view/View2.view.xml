@@ -1,0 +1,8 @@
+<mvc:View controllerName="financeoptimizer.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    >
+    <Page id="midView" title="{i18n>title}">
+        
+    </Page>
+</mvc:View>
